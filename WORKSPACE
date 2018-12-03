@@ -48,7 +48,9 @@ http_archive(
 )
 
 load("@envoy//bazel:repositories.bzl", "envoy_dependencies")
-envoy_dependencies()
+envoy_dependencies(
+    path = "@envoy//ci/prebuilt",
+)
 
 load("@envoy//bazel:cc_configure.bzl", "cc_configure")
 cc_configure()
