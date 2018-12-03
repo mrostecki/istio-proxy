@@ -20,6 +20,7 @@ load(
      "googletest_repositories",
      "mixerapi_dependencies",
 )
+load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 
 googletest_repositories()
 mixerapi_dependencies()
@@ -38,6 +39,12 @@ http_archive(
     strip_prefix = "envoy-" + ENVOY_SHA,
     url = "https://github.com/envoyproxy/envoy/archive/" + ENVOY_SHA + ".tar.gz",
     sha256 = ENVOY_SHA256,
+    patches = [
+        "//:envoy-proxy-link-third-party-libraries-dynamically.patch",
+        "//:envoy-proxy-unbundle-dependencies.patch",
+        "//:envoy-proxy-use-go-sdk-from-host.patch",
+        "//:envoy-proxy-change-boringssl-headers-path.patch",
+    ],
 )
 
 load("@envoy//bazel:repositories.bzl", "envoy_dependencies")
