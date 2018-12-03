@@ -16,8 +16,8 @@
 #pragma once
 
 #include "envoy/json/json_object.h"
-#include "openssl/ec.h"
-#include "openssl/evp.h"
+#include "boringssl/ec.h"
+#include "boringssl/evp.h"
 
 #include <string>
 #include <utility>

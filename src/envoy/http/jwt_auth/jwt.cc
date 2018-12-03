@@ -19,11 +19,11 @@
 #include "common/common/base64.h"
 #include "common/common/utility.h"
 #include "common/json/json_loader.h"
-#include "openssl/bn.h"
-#include "openssl/ecdsa.h"
-#include "openssl/evp.h"
-#include "openssl/rsa.h"
-#include "openssl/sha.h"
+#include "boringssl/bn.h"
+#include "boringssl/ecdsa.h"
+#include "boringssl/evp.h"
+#include "boringssl/rsa.h"
+#include "boringssl/sha.h"
 
 #include <algorithm>
 #include <cassert>
