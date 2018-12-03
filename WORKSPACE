@@ -56,9 +56,8 @@ cc_configure()
 load("@envoy_api//bazel:repositories.bzl", "api_dependencies")
 api_dependencies()
 
-load("@io_bazel_rules_go//go:def.bzl", "go_rules_dependencies", "go_register_toolchains")
-go_rules_dependencies()
-go_register_toolchains()
+load("@io_bazel_rules_go//go:def.bzl", "go_host_sdk")
+go_host_sdk("go_sdk")
 
 # Nov 28, 2017 (bazel 0.8.0 support)
 RULES_PROTOBUF_SHA = "563b674a2ce6650d459732932ea2bc98c9c9a9bf"
