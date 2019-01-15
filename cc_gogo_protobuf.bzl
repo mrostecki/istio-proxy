@@ -58,12 +58,10 @@ cc_proto_library(
     ],
 )
 """
-    http_archive(
+    native.new_local_repository(
         name = "gogoproto_git",
-        strip_prefix = "protobuf-" + GOGO_PROTO_SHA,
-        url = "https://github.com/gogo/protobuf/archive/" + GOGO_PROTO_SHA + ".tar.gz",
-        sha256 = GOGO_PROTO_SHA256,
         build_file_content = BUILD,
+        path = "/usr/src/protoc-gen-gogo",
     )
 
     if bind:

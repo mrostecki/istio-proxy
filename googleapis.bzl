@@ -40,12 +40,10 @@ cc_proto_library(
 )
 
 """
-    http_archive(
+    native.new_local_repository(
         name = "com_github_googleapis_googleapis",
         build_file_content = GOOGLEAPIS_BUILD_FILE,
-        strip_prefix = "googleapis-" + GOOGLEAPIS_SHA,
-        url = "https://github.com/googleapis/googleapis/archive/" + GOOGLEAPIS_SHA + ".tar.gz",
-        sha256 = GOOGLEAPIS_SHA256,
+        path = "/usr/src/googleapis",
     )
 
     if bind:

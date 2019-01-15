@@ -65,9 +65,7 @@ go_host_sdk("go_sdk")
 RULES_PROTOBUF_SHA = "563b674a2ce6650d459732932ea2bc98c9c9a9bf"
 RULES_PROTOBUF_SHA256 = "338e0d65cd709c6a6f9b5702466e641d536479be8b564d1e12a5d1de22a5cff6"
 
-http_archive(
+local_repository(
     name = "org_pubref_rules_protobuf",
-    strip_prefix = "rules_protobuf-" + RULES_PROTOBUF_SHA,
-    url = "https://github.com/pubref/rules_protobuf/archive/" + RULES_PROTOBUF_SHA + ".tar.gz",
-    sha256 = RULES_PROTOBUF_SHA256,
+    path = "/usr/src/bazel-rules-proto",
 )
