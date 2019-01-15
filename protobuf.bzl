@@ -22,11 +22,9 @@ PROTOBUF_SHA256 = "3d610ac90f8fa16e12490088605c248b85fdaf23114ce4b3605cdf81f7823
 
 def protobuf_repositories(load_repo=True, bind=True):
     if load_repo:
-        http_archive(
+        native.local_repository(
             name = "com_google_protobuf",
-            strip_prefix = "protobuf-" + PROTOBUF_SHA,
-            url = "https://github.com/google/protobuf/archive/" + PROTOBUF_SHA + ".tar.gz",
-            sha256 = PROTOBUF_SHA256,
+            path = "/usr/src/protobuf",
         )
 
     if bind:
