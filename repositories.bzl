@@ -234,7 +234,7 @@ load(":x_tools_imports.bzl", "go_x_tools_imports_repositories")
 load(":googleapis.bzl", "googleapis_repositories")
 
 def  mixerapi_dependencies():
-     protobuf_repositories(load_repo=True, bind=True)
+     protobuf_repositories(load_repo=False, bind=True)
      cc_gogoproto_repositories()
      go_x_tools_imports_repositories()
      googleapis_repositories()
